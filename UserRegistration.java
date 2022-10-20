@@ -3,23 +3,23 @@ package com.bridgelabz.userregistration;
 import java.util.Scanner;
 
 public class UserRegistration{
-    public void check_Mobile_Number(){
-        String mobileNumber;
+    public void check_Password_Atleast_One_UpperCase(){
+        String password;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Your Mobile Number: ");
-        mobileNumber = sc.next();
+        System.out.println("Enter Your Password: ");
+        password = sc.next();
 
-        String regexMobileNumber = "[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
+        //Rule 2 - Minimum 8 Characters With At least Minimum 1 Uppercase
+        String regexPassword = "^[A-Z]{1}[a-zA-Z]{7,}$";
 
-        boolean result = mobileNumber.matches(regexMobileNumber);
+        boolean result = password.matches(regexPassword);
 
         if(result){
-            System.out.println("Mobile Number is Valid");
+            System.out.println("Password Is Valid");
         }else{
-            System.out.println("Mobile Number is Invalid!!");
-            System.out.println("eg:+917948556486");
-            System.out.println("Please Refer Above Format!!");
+            System.out.println("Password Is Invalid!!");
+            System.out.println("Please Enter Minimum 8 Characters With Atleast 1 Uppercase Letter");
         }
     }
 }
