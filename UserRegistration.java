@@ -3,23 +3,23 @@ package com.bridgelabz.userregistration;
 import java.util.Scanner;
 
 public class UserRegistration{
-    public void check_Enter_Email_Validity(){
-        String emailId;
+    public void check_Mobile_Number(){
+        String mobileNumber;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Your Email: ");
-        emailId = sc.next();
+        System.out.println("Enter Your Mobile Number: ");
+        mobileNumber = sc.next();
 
-        String regexEmailId = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        String regexMobileNumber = "[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
 
-        boolean result = emailId.matches(regexEmailId);
+        boolean result = mobileNumber.matches(regexMobileNumber);
 
         if(result){
-            System.out.println("Email Id Is Valid");
+            System.out.println("Mobile Number is Valid");
         }else{
-            System.out.println("oops Something Went Wrong!!");
-            System.out.println("Please Enter All Required Fields");
-            System.out.println("eg:example.samplemail@gmail.com");
+            System.out.println("Mobile Number is Invalid!!");
+            System.out.println("eg:+917948556486");
+            System.out.println("Please Refer Above Format!!");
         }
     }
 }
