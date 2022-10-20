@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class UserRegistration{
     public void minimumThreeCharacterNameWithFirstLetterIsCapital(){
-        String firstName;
+        String lastName;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Your First Name: ");
-        firstName = sc.next();
+        System.out.println("Enter Your Last Name: ");
+        lastName = sc.next();
 
-        String regexFirstName = "^[A-Z]{1}[a-z]{2}[a-z]*$";
+        String regexLastName = "^[A-Z]{1}[a-z]{2}[a-z]*$";
 
-        boolean result = firstName.matches(regexFirstName);
+        boolean result = lastName.matches(regexLastName);
 
         if(result){
-            System.out.println("It Is Valid First Name");
+            System.out.println("It Is Valid Last Name");
         }else{
-            System.out.println("it Is Invalid First Name");
+            System.out.println("It Is Invalid!! Please Enter Minimum Three Character Or Start Last Name With Capital");
         }
     }
 }
